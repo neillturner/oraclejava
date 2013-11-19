@@ -29,7 +29,7 @@ class oraclejava::jdk7 (
  
  exec { 'download_oracle_jdk7':
   command     => "wget --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"$download_url\"",
-  creates     => "$download_dir/$java-linux-x64.bin",
+  creates     => "$download_dir/$java-linux-x64.tar.gz",
   cwd         => "$download_dir",
   timeout     => 0, 
   require     => Exec['remove_download_oracle_jdk7']

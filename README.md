@@ -31,7 +31,7 @@ Install Java JDK8u11
         download_url    => 'http://download.oracle.com/otn-pub/java/jdk/8u11-b01/jdk-8u11-linux-x64.tar.gz'     
       }  
  
-To determine the values for this go to
+To determine the values for this go to:
 
        http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
        

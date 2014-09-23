@@ -8,7 +8,7 @@ class oraclejava::jdk8 (
   $java            = 'jdk-8u20',
   $java_loc        = '/usr/java',
   $java_dir        = 'jdk1.8.0_20',
-  $download_url    = 'http://download.oracle.com/otn-pub/java/jdk/8u20-b01/jdk-8u20-linux-x64.tar.gz',
+  $download_url    = 'http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz',
   $download_dir    = "/tmp",
   $cookie          = 'oraclelicense=accept-securebackup-cookie'
 )

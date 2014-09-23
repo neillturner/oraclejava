@@ -10,7 +10,7 @@ class oraclejava::jdk6 (
   $java_dir        = "jdk1.6.0_45",
   $download_url    = "https://edelivery.oracle.com/otn-pub/java/jdk/6u45-b06/jdk-6u45-linux-x64.bin",
   $download_dir    = "/tmp",
-  $cookie          = "gpw_e24=http%3A%2F%2Fwww.oracle.com"
+  $cookie          = "oraclelicense=accept-securebackup-cookie"
 )
 {
 

@@ -4,7 +4,6 @@
 # 
 #
 class oraclejava::jdk7_rpm (
-  $java            = 'jdk-7u67',
   $java_loc        = '/usr/java',
   $java_dir        = 'jdk1.7.0_67',
   $rpm_name        = 'jdk-7u67-linux-x64.rpm',
@@ -28,11 +27,13 @@ class oraclejava::jdk7_rpm (
     timeout => 0,
   }
 
-  package { $rpm_name:
-    ensure   => latest,
-    source   => "$java_loc/$rpm_name",
-    provider => rpm,
-    require  => Exec['download_oracle_jdk7_rpm']
+  exec { 'install_oracle_jdk7_rpm':
+    cwd     => "$java_loc",
+    creates => "$java_loc/$java_dir",
+    command => "yum install \"$java_loc/$rpm_name\"",
+    require  => Exec['download_oracle_jdk7_rpm'],
+    timeout => 0
   }
+
 } 
  

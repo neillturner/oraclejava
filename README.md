@@ -42,6 +42,7 @@ Install Java JDK8u11 via rpm
 
       class { 'oraclejava::jdk8_rpm' :
         java_loc        => '/usr/java',
+        java_dir        => 'jdk1.8.0_11',
         rpm_name        => 'jdk-8u11-linux-x64.rpm',
         download_url    => 'http://download.oracle.com/otn-pub/java/jdk/8u11-b01/jdk-8u11-linux-x64.rpm'     
       }

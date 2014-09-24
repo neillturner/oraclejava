@@ -22,7 +22,6 @@ class oraclejava::jdk7_rpm (
   }
  
   exec { 'download_oracle_jdk7_rpm':
-    path    => '/usr/bin',
     cwd     => "$java_loc",
     creates => "$java_loc/$rpm_name",
     command => "wget --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"${downloadurl}\"",

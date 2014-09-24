@@ -29,7 +29,7 @@ class oraclejava::jdk8_rpm (
   exec { 'install_oracle_jdk8_rpm':
     cwd     => "$java_loc",
     creates => "$java_loc/$java_dir",
-    command => "yum install \"$java_loc/$rpm_name\"",
+    command => "yum -y install \"$java_loc/$rpm_name\"",
     require  => Exec['download_oracle_jdk8_rpm'],
     timeout => 0
   }

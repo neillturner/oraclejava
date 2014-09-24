@@ -1,6 +1,6 @@
 {
   "name": "neillturner-oraclejava",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "neillturner",
   "license": "Apache License, Version 2.0",
   "summary": "Install Oracle Java jdk6, 7 or 8",

@@ -1,15 +1,12 @@
-# == Class: oraclejava::jdk7_rpm 
+# == Class: oraclejava::jdk8_rpm 
 #
-# install oracle java jdk 7 
+# install oracle java jdk 8 rpm 
 # 
 #
-class oraclejava::jdk7_rpm (
-  $java            = 'jdk-7u67',
+class oraclejava::jdk8_rpm (
   $java_loc        = '/usr/java',
-  $java_dir        = 'jdk1.7.0_67',
-  $rpm_name        = 'jdk-7u67-linux-x64.rpm',
-  $download_url    = 'http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.rpm',
-  $download_dir    = "/tmp",
+  $rpm_name        = 'jdk-8u20-linux-x64.rpm',
+  $download_url    = 'http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.rpm',
   $cookie          = 'oraclelicense=accept-securebackup-cookie'
 )
 {
@@ -21,7 +18,7 @@ class oraclejava::jdk7_rpm (
      mode => 755,
   }
  
-  exec { 'download_oracle_jdk7_rpm':
+  exec { 'download_oracle_jdk8_rpm':
     cwd     => "$java_loc",
     creates => "$java_loc/$rpm_name",
     command => "wget --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"${download_url}\"",
@@ -32,7 +29,7 @@ class oraclejava::jdk7_rpm (
     ensure   => latest,
     source   => "$java_loc/$rpm_name",
     provider => rpm,
-    require  => Exec['download_oracle_jdk7_rpm']
+    require  => Exec['download_oracle_jdk8_rpm']
   }
 } 
  

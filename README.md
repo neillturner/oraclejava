@@ -49,14 +49,14 @@ Install Java JDK8u11 via rpm
 
 Install Java JDK7u67 via rpm and an http proxy 10.99.99.99
       
-class { 'oraclejava::jdk7_rpm':
-      java_loc        => '/usr/java',
-      java_dir        => 'jdk1.7.0_67',
-      rpm_name        => 'jdk-7u67-linux-x64.rpm',
-      download_url    => 'https://edelivery.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.rpm',
-      wget_opts       => "-e use_proxy=yes -e http_proxy=10.99.99.99:3128  -e https_proxy=10.99.99.99:3128",
-      require         => Class['epel']
- }      
+     class { 'oraclejava::jdk7_rpm':
+       java_loc        => '/usr/java',
+       java_dir        => 'jdk1.7.0_67',
+       rpm_name        => 'jdk-7u67-linux-x64.rpm',
+       download_url    => 'https://edelivery.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.rpm',
+       wget_opts       => "-e use_proxy=yes -e http_proxy=10.99.99.99:3128  -e https_proxy=10.99.99.99:3128",
+       require         => Class['epel']
+     }      
       
  
 To determine the values for latest release of Java versions:

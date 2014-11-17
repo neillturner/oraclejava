@@ -8,6 +8,7 @@ class oraclejava::jdk8_rpm (
   $java_dir        = 'jdk1.8.0_20',
   $rpm_name        = 'jdk-8u20-linux-x64.rpm',
   $download_url    = 'http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.rpm',
+  $wget_opts       = '',
   $cookie          = 'oraclelicense=accept-securebackup-cookie'
 )
 {
@@ -22,7 +23,7 @@ class oraclejava::jdk8_rpm (
   exec { 'download_oracle_jdk8_rpm':
     cwd     => "$java_loc",
     creates => "$java_loc/$rpm_name",
-    command => "wget --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"${download_url}\"",
+    command => "wget $wget_opts --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"${download_url}\"",
     timeout => 0,
   }
 

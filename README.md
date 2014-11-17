@@ -38,11 +38,12 @@ Install Java JDK8u11
         download_url    => 'http://download.oracle.com/otn-pub/java/jdk/8u11-b01/jdk-8u11-linux-x64.tar.gz'     
       } 
       
-Install Java JDK8u11 via rpm
+Install Java JDK8u11 via rpm via an http proxy
 
       class { 'oraclejava::jdk8_rpm' :
         java_loc        => '/usr/java',
         java_dir        => 'jdk1.8.0_11',
+        wget_opt        => "-e use_proxy=yes -e http_proxy=10.78.129.66:3128",
         rpm_name        => 'jdk-8u11-linux-x64.rpm',
         download_url    => 'http://download.oracle.com/otn-pub/java/jdk/8u11-b01/jdk-8u11-linux-x64.rpm'     
       }

@@ -10,6 +10,7 @@ class oraclejava::jdk7 (
   $java_dir        = 'jdk1.7.0_67',
   $download_url    = 'http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.tar.gz',
   $download_dir    = "/tmp",
+  $wget_opts       = '',
   $cookie          = 'oraclelicense=accept-securebackup-cookie'
 )
 {
@@ -28,7 +29,7 @@ class oraclejava::jdk7 (
  } 
  
  exec { 'download_oracle_jdk7':
-  command     => "wget --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"$download_url\"",
+  command     => "wget $wget_opts --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"$download_url\"",
   creates     => "$download_dir/$java-linux-x64.tar.gz",
   cwd         => "$download_dir",
   timeout     => 0, 

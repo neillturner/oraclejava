@@ -10,6 +10,7 @@ class oraclejava::jdk8 (
   $java_dir        = 'jdk1.8.0_20',
   $download_url    = 'http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz',
   $download_dir    = "/tmp",
+  $wget_opts       = '',
   $cookie          = 'oraclelicense=accept-securebackup-cookie'
 )
 {
@@ -28,7 +29,7 @@ class oraclejava::jdk8 (
  } 
  
  exec { 'download_oracle_jdk8':
-  command     => "wget --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"$download_url\"",
+  command     => "wget $wget_opts --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"$download_url\"",
   creates     => "$download_dir/$java-linux-x64.tar.gz",
   cwd         => "$download_dir",
   timeout     => 0, 

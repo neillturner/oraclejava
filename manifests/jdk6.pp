@@ -10,6 +10,7 @@ class oraclejava::jdk6 (
   $java_dir        = "jdk1.6.0_45",
   $download_url    = "https://edelivery.oracle.com/otn-pub/java/jdk/6u45-b06/jdk-6u45-linux-x64.bin",
   $download_dir    = "/tmp",
+  $wget_opts       = '',
   $cookie          = "oraclelicense=accept-securebackup-cookie"
 )
 {
@@ -28,7 +29,7 @@ class oraclejava::jdk6 (
  } 
  
  exec { 'download_oracle_jdk6':
-  command     => "wget --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"$download_url\"",
+  command     => "wget $wget_opts --no-cookies --no-check-certificate --header \"Cookie: $cookie\" \"$download_url\"",
   creates     => "$download_dir/$java-linux-x64.bin",
   cwd         => "$download_dir",
   timeout     => 0, 

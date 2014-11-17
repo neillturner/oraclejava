@@ -38,28 +38,38 @@ Install Java JDK8u11
         download_url    => 'http://download.oracle.com/otn-pub/java/jdk/8u11-b01/jdk-8u11-linux-x64.tar.gz'     
       } 
       
-Install Java JDK8u11 via rpm via an http proxy
+Install Java JDK8u11 via rpm
 
       class { 'oraclejava::jdk8_rpm' :
         java_loc        => '/usr/java',
         java_dir        => 'jdk1.8.0_11',
-        wget_opt        => "-e use_proxy=yes -e http_proxy=10.78.129.66:3128",
         rpm_name        => 'jdk-8u11-linux-x64.rpm',
         download_url    => 'http://download.oracle.com/otn-pub/java/jdk/8u11-b01/jdk-8u11-linux-x64.rpm'     
       }
+
+Install Java JDK7u67 via rpm and an http proxy 10.99.99.99
+      
+class { 'oraclejava::jdk7_rpm':
+      java_loc        => '/usr/java',
+      java_dir        => 'jdk1.7.0_67',
+      rpm_name        => 'jdk-7u67-linux-x64.rpm',
+      download_url    => 'https://edelivery.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.rpm',
+      wget_opts       => "-e use_proxy=yes -e http_proxy=10.99.99.99:3128  -e https_proxy=10.99.99.99:3128",
+      require         => Class['epel']
+ }      
       
  
 To determine the values for latest release of Java versions:
 
-       http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-       
-       http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+     
+http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
        
        
 To determine the values for older releases of Java versions:
 
-       http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
+http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
        
-       http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
+http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
        
-       http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html
+http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html

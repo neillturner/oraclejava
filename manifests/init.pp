@@ -1,8 +1,7 @@
 # == Class: oraclejava
 #
 #
-class oraclejava 
+class oraclejava
 {
-   class { 'oraclejava::jdk7': 
-   } 
+  class { 'oraclejava::jdk7': }
 }

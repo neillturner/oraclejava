@@ -1,33 +1,44 @@
 oraclejava
 ========== 
 
-Puppet module to install Oracle JDK 8, 7 or 6 by downloaded from the java oracle website. 
+Puppet module to install Oracle JDK 9, 8, 7 or 6 by downloaded from the java oracle website. 
 
 NOTE: JRE not yet supported. Install relies on wget being installed
 
 Minimal Usage
 =============
 
-Install Java JDK7u67:
+Install Java JDK7u79:
 
       class { 'oraclejava' : }
       
-Install Java JDK7u67 via rpm:
+Install Java JDK7u78 via rpm:
    
       class { 'oraclejava::jdk7_rpm' : }        
       
-Install Java JDK8u20:
+Install Java JDK8u51:
    
       class { 'oraclejava::jdk8' : }
 
-Install Java JDK8u20 via rpm:
+Install Java JDK8u51 via rpm:
    
       class { 'oraclejava::jdk8_rpm' : }       
      
- 
+Install Java JDK9b72:
+   
+      class { 'oraclejava::jdk8' : } 
  
 Complex Usage
 =============
+
+Install Java JDK9b72
+
+      class { 'oraclejava::jdk9' :
+        java           => 'jdk-8b72',
+        java_loc        => '/usr/java',
+        java_dir        => 'jdk1.9.0_b72',
+        download_url    => 'http://www.java.net/download/jdk9/archive/b72/binaries/jdk-9-ea-bin-b72-linux-x64-08_jul_2015.tar.gz'     
+      } 
 
 Install Java JDK8u11
 
@@ -61,10 +72,12 @@ Install Java JDK7u67 via rpm and an http proxy 10.99.99.99
  
 To determine the values for latest release of Java versions:
 
+https://jdk9.java.net/download/
+
 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
      
 http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
-       
+
        
 To determine the values for older releases of Java versions:
 

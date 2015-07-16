@@ -1,9 +1,9 @@
 {
   "name": "neillturner-oraclejava",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "neillturner",
   "license": "Apache License, Version 2.0",
-  "summary": "Install Oracle Java jdk6, 7 or 8 via source, rpm or http proxy",
+  "summary": "Install Oracle Java jdk6, 7, 8 or 9 via source, rpm or http proxy",
   "source": "https://github.com/neillturner/oraclejava",
   "project_page": "",
   "issues_url": "",

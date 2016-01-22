@@ -5,9 +5,9 @@
 #
 class oraclejava::jdk8_rpm (
   $java_loc     = '/usr/java',
-  $java_dir     = 'jdk1.8.0_51',
-  $rpm_name     = 'jdk-8u51-linux-x64.rpm',
-  $download_url = 'http://download.oracle.com/otn-pub/java/jdk/8u51-b16/jdk-8u51-linux-x64.rpm',
+  $java_dir     = 'jdk1.8.0_71',
+  $rpm_name     = 'jdk-8u71-linux-x64.rpm',
+  $download_url = 'http://download.oracle.com/otn-pub/java/jdk/8u51-b15/jdk-8u71-linux-x64.rpm',
   $wget_opts    = '',
   $cookie       = 'oraclelicense=accept-securebackup-cookie'
 )

@@ -5,7 +5,6 @@
 #
 
 class oraclejava::jdk9 (
-  $java_id      = 'jdk-9-ea+102',
   $java         = 'jdk-9-b102',
   $java_loc     = '/usr/java',
   $java_dir     = 'jdk1.9.0_b102',
@@ -30,18 +29,11 @@ class oraclejava::jdk9 (
   }
 
   exec { 'download_oracle_jdk9':
-    command => "wget ${wget_opts} --no-cookies --no-check-certificate --header \"Cookie: ${cookie}\" \"${download_url}\"",
-    creates => "${download_dir}/${java_id}-linux-x64.tar.gz",
+    command => "wget ${wget_opts} --no-cookies --no-check-certificate --header \"Cookie: ${cookie}\" \"${download_url}\" -O \"${download_dir}/${java}-linux-x64.tar.gz\"",
+    creates => "${download_dir}/${java}-linux-x64.tar.gz",
     cwd     => $download_dir,
     timeout => 0,
     require => Exec['remove_download_oracle_jdk9']
-  }
-
-  exec { 'rename_oracle_jdk9':
-    command => "mv \"${java_id}-linux-x64.tar.gz\" ${java}-linux-x64.tar.gz",
-    creates => "${download_dir}/${java}-linux-x64.tar.gz",
-    cwd     => $download_dir,
-    require => Exec['download_oracle_jdk9']
   }
 
   file { "${download_dir}/${java}-linux-x64.tar.gz":
@@ -49,7 +41,7 @@ class oraclejava::jdk9 (
     owner   => root,
     group   => root,
     mode    => '0750',
-    require => Exec['rename_oracle_jdk9']
+    require =>Exec['download_oracle_jdk9']
   }
 
   exec { 'explode_oracle_jdk9':

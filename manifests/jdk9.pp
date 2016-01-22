@@ -38,7 +38,7 @@ class oraclejava::jdk9 (
   }
 
   exec { 'rename_oracle_jdk9':
-    command => "mv \"${java_id}-linux-x64.tar.gz?*\" ${java}-linux-x64.tar.gz",
+    command => "mv \"${java_id}-linux-x64.tar.gz\" ${java}-linux-x64.tar.gz",
     creates => "${download_dir}/${java}-linux-x64.tar.gz",
     cwd     => $download_dir,
     require => Exec['download_oracle_jdk9']

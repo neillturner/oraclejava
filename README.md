@@ -16,15 +16,15 @@ Install Java JDK7u79 via rpm:
 
       class { 'oraclejava::jdk7_rpm' : }
 
-Install Java JDK8u51:
+Install Java JDK8u71:
 
       class { 'oraclejava::jdk8' : }
 
-Install Java JDK8u51 via rpm:
+Install Java JDK8u71 via rpm:
 
       class { 'oraclejava::jdk8_rpm' : }
 
-Install Java JDK9b72:
+Install Java JDK9b102:
 
       class { 'oraclejava::jdk9' : }
 

@@ -5,10 +5,10 @@
 #
 
 class oraclejava::jdk9 (
-  $java         = 'jdk-9b72',
+  $java         = 'jdk-9b102',
   $java_loc     = '/usr/java',
-  $java_dir     = 'jdk1.9.0_b72',
-  $download_url = 'http://www.java.net/download/jdk9/archive/b72/binaries/jdk-9-ea-bin-b72-linux-x64-08_jul_2015.tar.gz',
+  $java_dir     = 'jdk1.9.0_b102',
+  $download_url = 'http://www.java.net/download/jdk9/archive/102/binaries/jdk-9-ea+102_linux-x86_bin.tar.gz',
   $download_dir = '/tmp',
   $wget_opts    = '',
   $cookie       = 'oraclelicense=accept-securebackup-cookie'
